@@ -1,0 +1,36 @@
+Appenders:
+  Console:  #输出到控制台
+    name: CONSOLE #Appender命名
+    target: SYSTEM_OUT
+    PatternLayout:
+      charset: utf-8
+      pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
+  RollingFile: # 输出到文件，超过256MB归档
+    - name: file
+      ignoreExceptions: false
+      fileName: /logs/company.log
+      filePattern: "/company/logs/$${date:yyyy-MM}/company -%d{yyyy-MM-dd}-%i.log.gz"
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
+      Policies:
+        SizeBasedTriggeringPolicy:
+          size: "256 MB"
+      DefaultRolloverStrategy:
+        max: 1000
+Loggers:
+
+  Root:
+    level: info
+    includeLocation: true
+    AppenderRef:
+      - ref: CONSOLE
+      - ref: file
+
+  Logger: #单独设置某些包的输出级别
+    name: com.detective.demo #复数加上-
+    additivity: false #去除重复的log
+    level: debug
+    includeLocation: true
+    AppenderRef:
+      - ref: CONSOLE #复数加上-
+      - ref: file #复数加上-
