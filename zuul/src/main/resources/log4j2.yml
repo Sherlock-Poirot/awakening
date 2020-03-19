@@ -8,8 +8,8 @@ Appenders:
   RollingFile: # 输出到文件，超过256MB归档
     - name: file
       ignoreExceptions: false
-      fileName: /logs/company/company.log
-      filePattern: "/company/logs/$${date:yyyy-MM}/company -%d{yyyy-MM-dd}-%i.log.gz"
+      fileName: /logs/zuul/zuul.log
+      filePattern: "/zuul/logs/$${date:yyyy-MM}/zuul -%d{yyyy-MM-dd}-%i.log.gz"
       PatternLayout:
         pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
       Policies:

@@ -1,0 +1,17 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: zuul-proxy
+eureka:
+  client:
+    fetch-registry: true  #获取注册实例列表
+    register-with-eureka: true #注册到Eureka的注册中心
+    service-url:
+      defaultZone: http://localhost:8091/eureka #配置注册中心地址
+zuul:
+  routes:
+    company:
+      path: /company/**
+  sensitive-headers: Cookie,Set-Cookie,Authorization #配置过滤敏感的请求头信息，设置为空就不会过滤
+  add-host-header: true #设置为true重定向是会添加host请求头
