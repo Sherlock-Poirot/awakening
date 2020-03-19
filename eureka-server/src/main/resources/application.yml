@@ -1,13 +1,13 @@
 server:
-  port: 8091 #Ö¸¶¨¶Ë¿ÚºÅ
+  port: 8091 #æŒ‡å®šç«¯å£å·
 spring:
   application:
-    name: eureka-server # Ö¸¶¨·şÎñÃû
+    name: eureka-server # æŒ‡å®šæœåŠ¡å
 eureka:
   instance:
-    hostname: localhost # Ö¸¶¨Ö÷»úµØÖ·
+    hostname: localhost # æŒ‡å®šä¸»æœºåœ°å€
   client:
-    fetch-registry: false # Ö¸¶¨ÊÇ·ñÒª´Ó×¢²áÖĞĞÄ»ñÈ¡·şÎñ£¨×¢²áÖĞĞÄ²»ĞèÒª¿ªÆô£©
-    register-with-eureka: false #Ö¸¶¨ÊÇ·ñÒª×¢²áµ½×¢²áÖĞĞÄ£¨×¢²áÖĞĞÄ²»ĞèÒª¿ªÆô£©
+    fetch-registry: false # æŒ‡å®šæ˜¯å¦è¦ä»æ³¨å†Œä¸­å¿ƒè·å–æœåŠ¡ï¼ˆæ³¨å†Œä¸­å¿ƒä¸éœ€è¦å¼€å¯ï¼‰
+    register-with-eureka: false #æŒ‡å®šæ˜¯å¦è¦æ³¨å†Œåˆ°æ³¨å†Œä¸­å¿ƒï¼ˆæ³¨å†Œä¸­å¿ƒä¸éœ€è¦å¼€å¯ï¼‰
   server:
-    enable-self-preservation: false #¹Ø±Õ±£»¤Ä£Ê½
+    enable-self-preservation: false #å…³é—­ä¿æŠ¤æ¨¡å¼

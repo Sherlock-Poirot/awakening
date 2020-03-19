@@ -11,7 +11,7 @@ spring:
     name: company
 eureka:
   client:
-    fetch-registry: true  #»ñÈ¡×¢²áÊµÀıÁĞ±í
-    register-with-eureka: true #×¢²áµ½EurekaµÄ×¢²áÖĞĞÄ
+    fetch-registry: true  #è·å–æ³¨å†Œå®ä¾‹åˆ—è¡¨
+    register-with-eureka: true #æ³¨å†Œåˆ°Eurekaçš„æ³¨å†Œä¸­å¿ƒ
     service-url:
-      defaultZone: http://localhost:8091/eureka #ÅäÖÃ×¢²áÖĞĞÄµØÖ·
+      defaultZone: http://localhost:8091/eureka #é…ç½®æ³¨å†Œä¸­å¿ƒåœ°å€
