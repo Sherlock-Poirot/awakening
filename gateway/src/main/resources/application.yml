@@ -1,0 +1,28 @@
+server:
+  port: 8092
+#service-url:
+#  user-service: http://localhost:8190
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: path_route
+#          uri: ${service-url.user-service}/user/** #匹配后路由地址
+#          predicates: # 断言，路径相匹配的进行路由
+#            - Path=/user/**
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能
+          lower-case-service-id: true #使用小写服务名，默认是大写
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

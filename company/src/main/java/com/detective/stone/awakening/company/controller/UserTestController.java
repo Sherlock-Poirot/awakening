@@ -2,6 +2,7 @@ package com.detective.stone.awakening.company.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserTestController {
 
     @GetMapping("/username")
-    public String getUsername() {
-        return "Detective Stone";
+    public String getUsername(@RequestParam String name) {
+        return "Hello! " + name;
     }
 }
