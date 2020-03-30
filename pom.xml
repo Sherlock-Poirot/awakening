@@ -12,8 +12,8 @@
     <groupId>com.detective.stone.awakening</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-server</name>
-    <description>Demo project for Spring clound</description>
+    <name>parent</name>
+    <description>Demo project for Spring cloud</description>
 
     <properties>
         <java.version>1.8</java.version>
