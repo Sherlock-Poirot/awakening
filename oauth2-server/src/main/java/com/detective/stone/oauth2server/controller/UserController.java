@@ -13,4 +13,15 @@ public class UserController {
   public Object getCurrentUser(Authentication authentication) {
     return authentication.getPrincipal();
   }
+
+  @GetMapping("/hello")
+  public String hello() {
+    return "hello";
+  }
+
+  @RequestMapping("/hello2")
+  public String hello2(String str) {
+    return "hello";
+  }
+
 }

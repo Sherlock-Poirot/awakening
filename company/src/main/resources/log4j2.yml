@@ -4,7 +4,8 @@ Appenders:
     target: SYSTEM_OUT
     PatternLayout:
       charset: utf-8
-      pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
+      pattern: "%d %highlight{%-5level}{ERROR=Bright RED, WARN=Bright Yellow, INFO=Bright Green, DEBUG=Bright Cyan, TRACE=Bright White} %style{[%t]}{bright,magenta} %style{%c{1.}.%M(%L)}{cyan}: %msg%n"
+  #      pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n%d"
   RollingFile: # 输出到文件，超过256MB归档
     - name: file
       ignoreExceptions: false
@@ -26,7 +27,7 @@ Loggers:
       - ref: file
 
   Logger: #单独设置某些包的输出级别
-    name: com.detective.demo #复数加上-
+    name: com.detective.stone.awakening.company.dao #复数加上-
     additivity: false #去除重复的log
     level: debug
     includeLocation: true

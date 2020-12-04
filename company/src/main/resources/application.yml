@@ -4,8 +4,8 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://121.199.19.55:3306/awakening?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-    username: stone
+    url: jdbc:mysql://47.99.218.144:3306/loe?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
     password: Stn_123456
   application:
     name: company
@@ -15,3 +15,9 @@ eureka:
     register-with-eureka: true #注册到Eureka的注册中心
     service-url:
       defaultZone: http://localhost:8091/eureka #配置注册中心地址
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: conut=countSql

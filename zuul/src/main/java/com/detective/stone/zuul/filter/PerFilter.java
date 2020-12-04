@@ -40,7 +40,7 @@ public class PerFilter extends ZuulFilter {
         String host = request.getRemoteHost();
         String method = request.getMethod();
         String uri = request.getRequestURI();
-        log.info("Remote host:{},method:{},uri:{}", host, method, uri);
+//        log.info("Remote host:{},method:{},uri:{}", host, method, uri);
         return null;
     }
 }
