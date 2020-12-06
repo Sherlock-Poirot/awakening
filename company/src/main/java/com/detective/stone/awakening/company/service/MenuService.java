@@ -1,7 +1,9 @@
 package com.detective.stone.awakening.company.service;
 
+import com.detective.stone.awakening.company.dto.MenuTreeDTO;
 import com.detective.stone.awakening.company.model.Menu;
 import com.baomidou.mybatisplus.extension.service.IService;
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface MenuService extends IService<Menu> {
 
+  List<MenuTreeDTO> getMenuTree();
 }

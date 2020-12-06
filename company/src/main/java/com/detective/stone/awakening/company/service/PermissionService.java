@@ -14,4 +14,6 @@ import java.util.Collection;
  */
 public interface PermissionService extends IService<Permission> {
 
+  void truncate();
+
 }

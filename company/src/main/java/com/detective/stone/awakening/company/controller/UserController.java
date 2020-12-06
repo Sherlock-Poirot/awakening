@@ -1,6 +1,7 @@
 package com.detective.stone.awakening.company.controller;
 
 
+import com.detective.stone.awakening.company.annotation.Authority;
 import com.detective.stone.awakening.company.common.RestResult;
 import com.detective.stone.awakening.company.input.UserInput;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ public class UserController {
   private UserService userService;
 
   @PostMapping("insert")
+  @Authority(menuId = 5, display = "新增用户")
   public RestResult insert(@RequestBody UserInput input) {
     return RestResult.success(userService.insert(input));
   }

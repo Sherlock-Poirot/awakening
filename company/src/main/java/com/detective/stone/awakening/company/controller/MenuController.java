@@ -1,6 +1,9 @@
 package com.detective.stone.awakening.company.controller;
 
 
+import com.detective.stone.awakening.company.annotation.Authority;
+import com.detective.stone.awakening.company.common.RestResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.detective.stone.awakening.company.service.MenuService;
@@ -19,5 +22,11 @@ public class MenuController {
 
   @Autowired
   private MenuService menuService;
+
+  @GetMapping("/tree")
+  @Authority(menuId = 2)
+  public RestResult getMenuTree() {
+    return RestResult.success(menuService.getMenuTree());
+  }
 
 }

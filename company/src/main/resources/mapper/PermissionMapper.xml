@@ -17,5 +17,8 @@
     <result column="getRequest" property="getRequest"/>
     <result column="mustHave" property="mustHave"/>
   </resultMap>
+  <update id="truncate">
+    TRUNCATE table permission;
+  </update>
 
 </mapper>

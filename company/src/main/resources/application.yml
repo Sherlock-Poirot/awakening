@@ -15,6 +15,8 @@ eureka:
     register-with-eureka: true #注册到Eureka的注册中心
     service-url:
       defaultZone: http://localhost:8091/eureka #配置注册中心地址
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
 
 pagehelper:
   helper-dialect: mysql

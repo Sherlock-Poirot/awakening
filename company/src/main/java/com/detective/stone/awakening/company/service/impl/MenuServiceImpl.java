@@ -1,9 +1,11 @@
 package com.detective.stone.awakening.company.service.impl;
 
+import com.detective.stone.awakening.company.dto.MenuTreeDTO;
 import com.detective.stone.awakening.company.model.Menu;
 import com.detective.stone.awakening.company.dao.MenuMapper;
 import com.detective.stone.awakening.company.service.MenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements MenuService {
 
+  @Override
+  public List<MenuTreeDTO> getMenuTree() {
+    return null;
+  }
 }

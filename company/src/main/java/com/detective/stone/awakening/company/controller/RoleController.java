@@ -1,6 +1,7 @@
 package com.detective.stone.awakening.company.controller;
 
 
+import com.detective.stone.awakening.company.annotation.Authority;
 import com.detective.stone.awakening.company.common.RestResult;
 import com.detective.stone.awakening.company.input.RoleInput;
 import com.detective.stone.awakening.company.input.RoleUserInput;
@@ -28,17 +29,20 @@ public class RoleController {
   private RoleService roleService;
 
   @GetMapping("/page")
+  @Authority(menuId = 4)
   public RestResult getRolePages(@RequestParam Integer pageNum, @RequestParam Integer pageSize,
       @RequestParam(required = false) String name) {
     return RestResult.success(roleService.rolePages(pageNum, pageSize, name));
   }
 
   @PostMapping("/insert")
+  @Authority(menuId = 4, display = "新增角色")
   public RestResult insertRole(@RequestBody RoleInput input) {
     return RestResult.success(roleService.insert(input));
   }
 
   @PostMapping("/grantRole")
+  @Authority(menuId = 4, display = "授予角色")
   public RestResult grantRole(@RequestBody RoleUserInput input) {
     return RestResult.success(roleService.grantRole(input));
   }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class SignService {
 
   public String login(LoginInput input) {
-    // TODO
+    // TODO 返回用户权限相关
     UsernamePasswordToken token = new UsernamePasswordToken(input.getUsername(), input.getPassword());
     SecurityUtils.getSubject().login(token);
     return "操作成功";
