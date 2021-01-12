@@ -32,7 +32,7 @@ public class ShiroConfig {
     shiroFilterFactoryBean.setSecurityManager(securityManager);
     // 设置过滤器链 这是尤为重要的一个环节任何的接口路由或者静态资源在这里被过滤大多数采用默认过滤器不过你也可以自定义过滤器实现逻辑
     shiroFilterFactoryBean.setFilters(createFilters());
-    // 默认的 auth，authc，anon，user auth是授权 anno是任何都可以通过，authc是认证后可以访问，user则是设置rememberMe之后也可通过
+    // 默认的 auth，authc，anon，user auth是授权 anon是任何都可以通过，authc是认证后可以访问，user则是设置rememberMe之后也可通过
 //    Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 //    filterChainDefinitionMap.put("/**", "anon");
     shiroFilterFactoryBean.setFilterChainDefinitionMap(createFilterChainDefinitions());
@@ -58,6 +58,7 @@ public class ShiroConfig {
       filterChainDefinitionMap
           .put(permission.getMapping(), SignFilter.MARK + "," + PermissionFilter.MARK + "[" + permission.getName() + "]");
     }
+    filterChainDefinitionMap.put("/test/**", "anon");
     return filterChainDefinitionMap;
   }
 
