@@ -9,6 +9,12 @@ spring:
     password: Stn_123456
   application:
     name: company
+
+  rabbitmq:
+    host: 47.99.218.144
+    port: 5672
+    username: root
+    password: stn123456
 eureka:
   client:
     fetch-registry: true  #获取注册实例列表
